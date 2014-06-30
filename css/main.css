@@ -1,0 +1,358 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@import url('http://fonts.googleapis.com/css?family=Marck+Script');
+
+@media (min-width: 768px){
+	.navbar {
+		border-radius: 0px;
+	}
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-family: "Lantinghei TC", Hiragino Kaku Gothic Pro, Heiti TC, Helvetica, sans-serif;
+}
+
+.view-port{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.wrap {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 10;
+	min-height: 460px;
+	box-shadow: 0px 0px 8px 5px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0px 0px 8px 5px rgba(0,0,0,.5);
+	-moz-box-shadow: 0px 0px 8px 5px rgba(0,0,0,.5);
+	background: #EEFFBB;
+}
+
+.navbar {
+	margin-top: 0px; 
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #1A4E59),
+	color-stop(1, #404040)
+	);
+	background-image: -o-linear-gradient(bottom, #1A4E59 0%, #404040 100%);
+	background-image: -moz-linear-gradient(bottom, #1A4E59 0%, #404040 100%);
+	background-image: -webkit-linear-gradient(bottom, #1A4E59 0%, #404040 100%);
+	background-image: -ms-linear-gradient(bottom, #1A4E59 0%, #404040 100%);
+	background-image: linear-gradient(to bottom, #1A4E59 0%, #404040 100%);
+
+	border-bottom: 1px solid #003C9D;
+}
+
+.navbar-header {
+	float: none;
+}
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.headers {
+	position: relative;
+}
+
+.rbt, .lbt {
+	color: #FFFFFF;
+	margin-top: 7px;
+}
+
+.rbt {
+	position: absolute;
+	margin: 7px 5px;
+	right: 0px;
+
+}
+
+.lbt {
+	position: absolute;
+	margin: 7px 5px;
+	left: 0px;
+}
+
+.btn:hover, .btn:focus {
+	color: #F0F0F0;
+	text-decoration: none;
+}
+
+.logo h1{
+	font-size: 1.7em;
+	color: #FFFFFF;
+	font-family: 'Marck Script', cursive;
+	text-align: center;
+}
+
+.content {
+	position: relative;
+	margin-top: 56px;
+	top: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.item-list{
+	list-style: none;
+	padding-left: 0px;
+	position: relative;
+}
+
+.item-list li {
+	background-color: #CCFF99;
+	padding: 0px;
+	border-bottom: solid 1px #227700;
+}
+
+li[data-id="0"] {
+	background-color: #CCFF99;
+	padding: 0px;
+	border-bottom: solid 1px #227700;
+	margin: 0px;
+}
+
+li h4 {
+/*	display: inline;*/
+	top: 3px;
+	left: 80px;
+	position: absolute;
+}
+
+li h5 {
+	top: 28px;
+	left: 80px;
+	position: absolute;
+}
+
+li p {
+	top: 17px;
+	left: 230px;
+	position: absolute;
+}
+
+.note-img{
+	width: 66px;
+	display: inline-block;
+}
+
+.toolbar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #75D923),
+		color-stop(1, #3C7805)
+	);
+	background-image: -o-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -moz-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -webkit-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -ms-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: linear-gradient(to bottom, #75D923 0%, #3C7805 100%);
+	border: none;
+	border-radius: 0px;
+}
+
+.toolbar:hover {
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #75D923),
+		color-stop(1, #3C7805)
+	);
+	background-image: -o-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -moz-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -webkit-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: -ms-linear-gradient(bottom, #75D923 0%, #3C7805 100%);
+	background-image: linear-gradient(to bottom, #75D923 0%, #3C7805 100%);
+}
+
+.toolbar .camera {
+	color: #FFFFFF;
+}
+
+.init-img {
+	display: block;
+	opacity: 0.1;
+	margin: 0 auto;
+	margin-left: 18px;
+}
+
+.tip-head {
+	margin-top: 25px;
+	text-align: left;
+	margin-left: 18px;
+}
+
+/*Panel*/
+.left-panel, .right-panel {
+	width: 225px;
+	height: 100%;
+	background-color: #444444;
+	color: #000000;
+	position: absolute;
+	z-index: 1; 
+	display: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.icon-add{
+	color: #000000;
+}
+
+.left-panel {
+	left: 0;
+	top: 0;
+}
+
+.musk{
+	width: 100%;
+	height: 2000px;
+	display: none;
+	min-height: 1000px;
+	z-index: 10000;
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	left: 0;
+}
+
+/*LeftPanel*/
+.nb-list > li {
+	list-style: none;
+	margin-left: -40px;
+	padding: 10px 17px;
+	color: #FFFFFF;
+	font-size: 20px;
+	border-bottom: solid 1px #FFFFFF;
+	background-color: #DDAA00;
+}
+
+.nb-list > .nb-list-head{
+	background: #000000;
+	padding: 0.5px 17px;
+	border-bottom: solid 1px #FFFFFF;
+}
+
+.add-notebook {
+	color: #FFFFFF;
+	margin-top: 7px;
+	position: absolute;
+	margin: 7px 5px;
+	right: 0px;
+}
+
+.search {
+	padding: 7px 11px;
+	margin-top: 10px;
+	margin-left: -23px;
+	margin-bottom: 6px;
+}
+
+.search-btn {
+	margin-left: -23px;
+}
+
+.right-panel {
+	width: 225px;
+	right: 0;
+	top: 0;
+}
+
+/*Animation*/
+.left {
+	-webkit-transform: translateX(225px);
+	-moz-transform: translateX(225px);
+	-ms-transform: translateX(225px);
+	-o-transform: translateX(225px);
+	transform: translateX(225px);
+	overflow: hidden;
+}
+
+.right {
+	-webkit-transform: translateX(-225px);
+	-moz-transform: translateX(-225px);
+	-ms-transform: translateX(-225px);
+	-o-transform: translateX(-225px);
+	transform: translateX(-225px);
+	overflow: hidden;
+	z-index: 10;
+}
+
+/*Edit Template*/
+.operation-btn {
+	margin: 0 auto;
+	margin-top: 56px;
+
+}
+
+.operation-btn button {
+	padding: 10px 18px; 
+	border: 1px solid #FFFFFF;
+}
+
+.edit-group {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+}
+
+/**/
+
+.create-photo {
+	display: block;
+	width: 300px;
+}
+
+.show-img {
+	margin-top: 20px;
+	display: block;
+	width: 300px;
+}
+
+/*Draw Mode*/
+#save-draw {
+	display: block;
+	margin: 0 auto;
+	background-color: #39DDDF;
+	padding: 10px 30px;
+}
+
+#m {
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	width: 300px;
+	height: 400px;
+
+}
+
+#start {
+	width: 100px;
+	background-color: #39DDDF;
+	padding: 10px 30px;
+}

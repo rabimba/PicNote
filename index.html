@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+      <div class="view-port" id="view-port">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="wrap" id="wrap">
+          <!--Header-->
+          <div>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+              <div class="navbar-header" id="navbar-header">
+                <div class="row headers">
+                  <div class="col-xs-3">
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="logo" id="logo"><h1>PicNote</h1></div>
+                  </div>
+                  <div class="col-xs-3">
+                    <span class="glyphicon glyphicon-search btn btn-lg rbt" id="right-btn"></span>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!--ListItem-->
+          <div class="content">
+              <div class="result" id="result">
+                <ul class="item-list" id="item-list">
+                  <li class="list-items" data-id="${id}"><img class="note-img" src="${img}"><h4>${title}</h4><h5 class="label label-info">${tag}</h5><p>${time}</p></li>
+                </ul>
+              </div>
+          </div>
+
+          <!--Toolbar-->
+          <div class="toolbars">
+            <button class="toolbar" id="camera" type="buton">
+              <span class="glyphicon glyphicon-camera btn btn-lg camera"></span>
+            </button>
+          </div>
+          <div class="musk" id="musk"></div>
+        </div>
+      </div>
+      <!-- <span>(${count})</span> -->
+
+
+      <!-- ************Template************ !-->
+      <!--Empty Template-->
+      <script type="text/template" id="empty-list">
+      <div class="view-port" id="view-port">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="wrap" id="wrap">
+          <!--Header-->
+          <div>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+              <div class="navbar-header">
+                <div class="row headers">
+                  <div class="col-xs-3">
+<!--                     <span class="glyphicon glyphicon-align-justify btn btn-lg lbt" id="left-btn"></span> -->
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="logo" id="logo"><h1>ShotNote</h1></div>
+                  </div>
+                  <div class="col-xs-3">
+                    <span class="glyphicon glyphicon-search btn btn-lg rbt" id="right-btn"></span>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="content">
+              <div class="result" id="result">
+                <div class="row">
+                  <ul class="item-list" id="item-list">
+                    <div class="col-xs-12">
+                        <h2 class="tip-head">Take a Photo and Write a Note.</h2>
+                        <img class="init-img" src="./img/note-19-icon-256.png">
+                    </div>
+                  </ul>
+                </div>
+              </div>
+          </div>
+
+          <!--Toolbar-->
+          <div class="toolbars">
+            <button class="toolbar" id="camera" type="buton">
+              <span class="glyphicon glyphicon-camera btn btn-lg camera"></span>
+            </button>
+          </div>
+          <div class="musk" id="musk"></div>
+        </div>
+      </div>
+      </script>
+
+      <!--Main View-->
+      <script type="text/template" id="main-view">
+        <div class="view-port" id="view-port">
+          <!--[if lt IE 7]>
+              <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+          <![endif]-->
+          <div class="wrap" id="wrap">
+            <!--Header-->
+            <div>
+              <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="navbar-header" id="navbar-header">
+                  <div class="row headers">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="logo" id="logo"><h1>ShotNote</h1></div>
+                    </div>
+                    <div class="col-xs-3">
+                      <span class="glyphicon glyphicon-search btn btn-lg rbt" id="right-btn"></span>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <!--ListItem-->
+            <div class="content">
+                <div class="result" id="result">
+                  <ul class="item-list" id="item-list">
+                    <li class="list-items" data-id="${id}"></li>
+                  </ul>
+                </div>
+            </div>
+
+            <!--Toolbar-->
+            <div class="toolbars">
+              <button class="toolbar" id="camera" type="buton">
+                <span class="glyphicon glyphicon-camera btn btn-lg camera"></span>
+              </button>
+            </div>
+            <div class="musk" id="musk"></div>
+          </div>
+        </div>        
+      </script>
+
+      <!--MainNavBar-->
+      <script type="text/template" id="main-nav">
+        <div class="navbar-header" id="navbar-header">
+          <div class="row headers">
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-6">
+              <div class="logo" id="logo"><h1>ShotNote</h1></div>
+            </div>
+            <div class="col-xs-3">
+              <span class="glyphicon glyphicon-search btn btn-lg rbt" id="right-btn"></span>
+            </div>
+          </div>
+        </div>
+      </script>
+
+      <!--Main List Item-->
+      <script type="text/template" id="main-list">
+          <ul class="item-list" id="item-list">
+            <li class="list-items" data-id="${id}"><img class="note-img" src="${img}"><h4>${title}</h4><h5 class="label label-info">${tag}</h5><p>${time}</p></li>
+          </ul>
+      </script>
+
+      <!--Search List Item-->
+      <script type="text/template" id="search-list">
+          <ul class="item-list" id="item-list">
+            <li class="list-items" data-id="${id}"><img class="note-img" src="${img}"><h4>${title}</h4><h5 class="label label-info">${tag}</h5><p>${time}</p></li>
+          </ul>
+      </script>
+
+      <!--Create a Note-->
+      <script type="text/template" id="create-a-note">
+        <div class="wrap" id="wrap">
+          <div>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+              <div class="navbar-header">
+                <div class="row headers">
+                  <div class="col-xs-3">
+                  <span class="glyphicon glyphicon-chevron-left btn btn-lg lbt" id="check"></span>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="logo" id="logo"><h1>ShotNote</h1></div>
+                  </div>
+                  <div class="col-xs-3">
+                    <span class="glyphicon glyphicon-ok btn btn-lg rbt" id="edit-done"></span>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="btn-group operation-btn" data-id="${id}">
+            <button type="button" class="btn btn-default btn-lg active" id="info" data-id="${id}">Info</button>
+            <button type="button" class="btn btn-lg btn-default" id="draw" data-id="${id}">Draw</button>
+            <button type="button" class="btn btn-lg btn-default" id="edit-note" data-id="${id}">Edit</button>
+            <button type="button" class="btn btn-lg btn-default" id="delete-note" data-id="${id}">Delete</button>
+          </div>
+          <div class="note-content">
+            <div class="input-group edit-group">
+              <div id="take-img"></div>
+              <img class="show-img" id="show-img" src="${img}">
+              <div id="div-title"><h2 class="title" id="title">${title}</h2></div>
+              <div id="div-tag"><h3 class="tag label label-info" id="tag">${tag}</h3></div>
+              <div id="div-time"><h4 class="date" id="date">${time}</h4></div>
+              <div id="div-memo"><p class="memo" id="memo">${memo}</p></div>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+      <!--Draw Mode-->
+      <script type="text/template" id="draw-mode">
+      <div class="wrap" id="wrap">
+        <div>
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+              <div class="row headers">
+                <div class="col-xs-3">
+                <span class="glyphicon glyphicon-chevron-left btn btn-lg lbt" id="check"></span>
+                </div>
+                <div class="col-xs-6">
+                  <div class="logo" id="logo"><h1>ShotNote</h1></div>
+                </div>
+                <div class="col-xs-3">
+                  <span class="glyphicon glyphicon-ok btn btn-lg rbt" id="edit-done"></span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="btn-group operation-btn">
+          <button type="button" class="btn btn-default btn-lg" id="info" data-id="${id}">Info</button>
+          <button type="button" class="btn btn-lg btn-default active" id="
+          draw" data-id="${id}">Draw</button>
+          <button type="button" class="btn btn-lg btn-default" id="edit-note" data-id="${id}">Edit</button>
+          <button type="button" class="btn btn-lg btn-default" id="delete-note" data-id="${id}">Delete</button>
+        </div>
+        <div id="take-img"></div>
+
+        <canvas id="m"></canvas>
+
+    <p style="text-align: center">
+        筆色：
+        <input id="Radio1" checked="false" name="R" type="radio" value="V1"  />紅
+        <input id="Radio2" checked="false" name="R" type="radio" value="V1"  />綠
+        <input id="Radio3" checked="false" name="R" type="radio" value="V1"  />藍
+        <input id="Radio4" checked="true" name="R" type="radio" value="V1"  />黑</p>
+    <p style="text-align: center">
+        筆粗：
+        <input id="Radio5" checked="true" name="W" type="radio" value="V1"  />1px
+        <input id="Radio6" checked="false" name="W" type="radio" value="V1"  />2px
+        <input id="Radio7" checked="false" name="W" type="radio" value="V1"  />3px
+        <input id="Radio8" checked="false" name="W" type="radio" value="V1"  />5px
+        <input id="Radio9" checked="false" name="W" type="radio" value="V1"  />10px</p>
+    <p style="text-align: center">
+        <input id="Button1" type="button" value="清除畫面"  />&nbsp;&nbsp;
+        <input id="Button2" type="button" value="輸出影像"  /></p>
+    <p style="text-align: center">
+
+      </div>
+      </script>
+
+      <!--Edit Mode-->
+      <script type="text/template" id="edit">
+      <div class="wrap" id="wrap">
+        <div>
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+              <div class="row headers">
+                <div class="col-xs-3">
+                <span class="glyphicon glyphicon-chevron-left btn btn-lg lbt" id="check"></span>
+                </div>
+                <div class="col-xs-6">
+                  <div class="logo" id="logo"><h1>ShotNote</h1></div>
+                </div>
+                <div class="col-xs-3">
+                  <span class="glyphicon glyphicon-ok btn btn-lg rbt" id="edit-done"></span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="btn-group operation-btn">
+          <button type="button" class="btn btn-default btn-lg" id="info" data-id="${id}">Info</button>
+          <button type="button" class="btn btn-lg btn-default" id="
+          draw" data-id="${id}">Draw</button>
+          <button type="button" class="btn btn-lg btn-default active" id="edit-note" data-id="${id}">Edit</button>
+          <button type="button" class="btn btn-lg btn-default" id="delete-note" data-id="${id}">Delete</button>
+        </div>
+        <div class="note-content" id="note-content">
+          <div class="input-group edit-group">
+            <div id="div-title"><h2 class="title" id="title">${title}</h2></div>
+            <div id="div-tag"><h3 class="tag label label-info" id="tag">${tag}</h4></div>
+            <div id="div-time"><h4 class="date" id="date">${time}</h2></div>
+            <div id="div-memo"><p class="memo" id="memo">${memo}</p></div>
+            <button class="btn btn-primary btn-block" id="edit-title" data-id="${id}" type="submit">Edit</button>
+          </div>
+        </div>
+      </div>
+      </script>
+      <!--Edit Title-->
+      <script type="text/template" id="edit-title">
+       <div class="note-content" id="note-content">
+          <div class="input-group edit-group">
+            <div id="div-title"><h5 class="title" id="title">Title : </h5><input type="text" id="input-title" value="${title}" placeholder="Please Key in the Title">
+            </div>
+            <div id="div-tag"><h5 class="tag" id="tag">Tag : </h5><input type="text" id="input-tag" value="${tag}" placeholder="Please Key in the Tag">
+            </div>
+            <div id="div-time"><h5 class="date" id="date">Date : </h5><input type="text" id="input-time" value="${time}" placeholder="Please Key in Time"></div>
+            <div id="div-memo"><h5 class="memo" id="memo">Memo : </h5><textarea id="input-memo">${memo}</textarea>
+            </div>
+            <button class="btn btn-primary btn-block" id="save-title-btn" data-id="${id}" type="submit">Save</button>
+          </div>
+        </div>
+      </script>
+      <!--Save Title-->
+      <script type="text/template" id="save-title">
+        <div class="note-content" id="note-content">
+          <div class="input-group edit-group">
+            <div id="div-title"><h2 class="title" id="title">${title}</h2></div>
+            <div id="div-tag"><h3 class="tag label label-info" id="tag">${tag}</h3></div>
+            <div id="div-time"><h4 class="date" id="date">${time}</h4></div>
+            <div id="div-memo"><p class="memo" id="memo">${memo}</p></div>
+            <button class="btn btn-primary btn-block" id="edit-title" data-id="${id}" type="submit">Edit</button>
+          </div>
+        </div>
+      </script>
+
+
+
+<!--           Title : <input id="input-title" value="${title}" placeholder="Please Key in the Title"><button id="save-title-btn" data-id="${id}">Save</button>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+
+
+        <h2 class="title" id="title">${title}</h2><button id="edit-title" data-id="${id}">Edit</button> -->
+<!-- 
+          <div id="div-title"><h2 class="title" id="title">Title : ${title}</h2><button id="edit-title" data-id="${id}">Edit</button></div>
+          <div id="div-tag"><h3 class="tag label label-info" id="tag">Tag : ${tag}</h3><button id="edit-tag" data-id="${id}">Edit</button></div>
+          <div id="div-time"><p class="time" id="time">Time : ${time}</p><button id="edit-time" data-id="${id}">Edit</button></div>
+          <div id="div-memo"><h4 class="memo" id="memo">Memo :</h4><p>${memo}</p><button id="edit-memo" data-id="${id}">Edit</button></div> -->
+
+        <!--Script-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/backbone.js"></script>
+        <script src="js/vendor/backbone.localStorage-min.js"></script>
+        <script src="js/vendor/jquery.tmpl.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
